@@ -8,6 +8,7 @@ export const DataContextProvider = (props) => {
   const [keywords , setKeyword] = useState('')
 
   const handleSearch = function (e) {
+    /** This is a  function to search data with enter keyboard after set value */
     if(e.key === 'Enter'){
       setKeyword(e.target.value)
     }else{
@@ -16,7 +17,10 @@ export const DataContextProvider = (props) => {
   }
 
   useEffect(() => {
-    const fetchDataAnime = function () {
+    /** This is a  function to fetching data from public api
+     * 
+     */
+    const fetchData = function () {
       const payload = {
         url : 'character',
         params : {
@@ -30,7 +34,7 @@ export const DataContextProvider = (props) => {
           return responseData
         })
     }
-    fetchDataAnime()
+    fetchData()
   },[keywords])
 
   const contextValue  = {

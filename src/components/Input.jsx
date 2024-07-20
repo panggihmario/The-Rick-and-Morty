@@ -14,7 +14,7 @@ const Input = styled.input`
 `
 const InputField = ({...props}) => {
   return (
-    <Input label="input" {...props} />
+    <Input {...props} />
   )
 }
 
