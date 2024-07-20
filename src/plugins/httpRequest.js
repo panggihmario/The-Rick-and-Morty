@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'https://rickandmortyapi.com/api/'
+const BASE_URL = process.env.REACT_APP_BASE_URL
 /** Create Axios instance */
 const axiosInstance = () =>
   axios.create({

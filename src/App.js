@@ -10,8 +10,6 @@ function App() {
   return (
     <AppContainer>
       <TitleImage/>
-      
-      
       <InputField onKeyDown={handleSearch}  placeholder="Search"  />
       <CardContainer>
         {items.map((item) => {
