@@ -6,6 +6,7 @@ const Card = styled.li`
   color : black;
   transition: 0.5s all ease 0s;
   border-radius : 10px;
+  position : relative;
   &:hover {
     transform : scale(1.1);
     z-index : 3;
@@ -16,8 +17,17 @@ const Card = styled.li`
     width : 100%;
     height : 100%;
     object-fit : cover;
-    dispaly : block;
+    display : block;
     border-radius : 10px;
+  }
+  & div {
+    position : absolute;
+    bottom : 0;
+    color : white;
+    width: -webkit-fill-available;
+    border-radius : 0 0 10px 10px;
+    background-color : rgba(0,0,0,0.5);
+    padding : 10px;
   }
 `
 
@@ -25,6 +35,7 @@ const Item = ({item}) => {
   return (
     <Card>
       <img alt="" src={item.image} />
+      <div>{item.name}</div>
     </Card>
   )
 }

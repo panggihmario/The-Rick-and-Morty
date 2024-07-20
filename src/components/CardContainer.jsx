@@ -7,6 +7,12 @@ const CardContainer = styled.ul`
   gap : 20px;
   width : 100%;
   padding : 0;
+  @media(max-width :1000px) {
+     grid-template-columns : repeat(3, 1fr);
+  }
+  @media(max-width :500px) {
+    grid-template-columns : repeat(1, 1fr);
+  }
 `
 
 export default CardContainer
