@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import AppContainer from "./components/AppContainer";
+import CardContainer from "./components/CardContainer";
+import Item from "./components/Item";
+import { useContext } from "react";
+import InputField from "./components/Input";
+import { DataContext } from "./context/dataContext";
 
 function App() {
+  const { items, handleSearch} = useContext(DataContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <InputField onKeyDown={handleSearch}  placeholder="Search"  />
+      <CardContainer>
+        {items.map((item) => {
+          return (
+            <Item  key={item.id} item={item} />
+          )
+        })}
+      </CardContainer>
+    </AppContainer>
   );
 }
 
