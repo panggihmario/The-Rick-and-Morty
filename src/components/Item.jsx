@@ -35,8 +35,8 @@ const Card = styled.li`
 const Item = ({item}) => {
   return (
     <Card>
-      <img alt="" src={item.image} />
-      <div>{item.name}</div>
+      <img data-testid="instance-img" alt="" src={item.image} />
+      <div data-testid="instance-name">{item.name}</div>
     </Card>
   )
 }
