@@ -7,6 +7,7 @@ const Card = styled.li`
   transition: 0.5s all ease 0s;
   border-radius : 10px;
   position : relative;
+  list-style : none;
   &:hover {
     transform : scale(1.1);
     z-index : 3;
